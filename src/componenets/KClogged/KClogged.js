@@ -12,7 +12,7 @@ const KClogged = () => {
             Got a super cool craft you want to share? Awesome! We've got monthly crafting challenges just for you.🎉 Whether you're into painting, building, or making things sparkle, there's a challenge waiting for your awesome skills!<br/><br/> 💪<br/>
             So, if you've made something awesome and want to show it off, just upload your craft below.<br/><br/>📸 Let's fill our gallery with your fantastic creations and inspire each other to make even more amazing stuff! 🚀<br/>
             Let's get crafting, KidsClub style! 🎉🎨</p>
-          <a href="https://docs.google.com/forms">Join Now!</a>
+          <a href="https://forms.gle/VEk1HyjC5U7xHyvn7">Join Now!</a>
           
         </div>
         <div className="section-right">
