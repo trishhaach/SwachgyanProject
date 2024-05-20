@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@media (max-width: 768px) {
+  .desktopMenu {
+    display: none;
+  }
+}
+
+.navbar {
+  height: 100px; /* Fixed height for the navbar */
+  width: 100vw;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed; /* Change position to fixed */
+  top: 0;
+  left: 0; /* Align the navbar to the left side */
+  z-index: 1000;
+  background-color: white;
+  color: RGB(214, 72, 31);
+  font-family: "Fredoka One", sans-serif;
+}
+
+.desktopMenu {
+  margin-left: 35%; /* Adjust margin to keep menu centered */ transform: translateX(-50%); 
+  transform: translateX(-50%); /* Center menu horizontally */
+}
+
+.desktopMenuListItem {
+  margin: 1rem;
+  cursor: pointer;
+  font-family: "Fredoka One";
+  font-size: 20px;
+  top: 20px;
+}
+.desktopMenuListItem span {
+  font-family: "Fredoka One", sans-serif; /* Add Fredoka One font */
+}
+
+.desktopMenuListItem:hover {
+  color: orange;
+  padding-bottom: 0.5rem;
+}
+
+.desktopMenuListItem {
+  position: relative;
+}
+
+.menu-icon {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar__logo {
+  position: absolute;
+  top: 10px; /* Adjust the position as needed */
+  left: 10px; /* Adjust the position as needed */
+}
+
+.logo-icon {
+  width: 25%; /* Adjust the width of the logo */
+  height: auto;
+}
