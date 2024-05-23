@@ -176,7 +176,7 @@ const Contact = () => {
     }
 
     axios
-      .post("https://swachgyaan.vercel.app/contact/submit", formData)
+      .post("http://localhost:3001/contact/submit", formData)
       .then((response) => {
         if (response.status === 201) {
           alert("Your message has been delivered.");
