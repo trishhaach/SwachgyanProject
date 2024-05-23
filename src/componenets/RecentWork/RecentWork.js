@@ -19,12 +19,12 @@ const RecentWorkContainer = () => {
 const RecentWork = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [
-    Aditika,
-    craft1,
     craft2,
     HOC2,
     HOC3,
     HOC4, 
+    Aditika,
+    craft1,
   ];
 
   const handleLeftArrowClick = () => {
