@@ -66,15 +66,21 @@
     border-radius: 10px;
 }
 
+#about .content {
+    text-align: center; /* Aligning text to the center */
+}
+
 #about .content ul {
     list-style: none;
     padding-left: 0;
+    text-align: left; /* Aligning bullet points text to the left */
 }
 
 #about .content ul li {
     position: relative;
     padding-left: 30px;
     font-size: 2rem;
+    text-align: left; /* Aligning bullet points text to the left */
 }
 
 #about .content ul li i {
