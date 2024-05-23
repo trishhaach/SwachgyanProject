@@ -1,4 +1,4 @@
-/* BinSort.css */
+
 
 /* body {
     display: flex;
@@ -6,11 +6,12 @@
     align-items: center;
     height: 100vh; 
     margin: 0; 
+change
 } */
 
 form {
-    width: 300%; 
-    max-width: 400px;
+    width: 100vw; 
+    max-width: 100vw;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;

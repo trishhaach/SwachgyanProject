@@ -36,12 +36,15 @@
 .section-right h2 {
     margin-top: 0;
     color: RGB(214, 72, 31);
+    font-size: 40px;
 }
 
 .section-left p,
 .section-right p {
     margin-bottom: 20px;
     color: RGB(214, 72, 31);
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .section-left a {
@@ -71,7 +74,7 @@
 
 .section-right img {
     max-width: 100%; /* Ensure the image does not exceed its container's width */
-    height: 80%; /* Maintain aspect ratio */
+    height: 70%; /* Maintain aspect ratio */
     display: block; /* Ensure the image is a block element */
     margin-top: 2%; /* Adjust spacing as needed */
 }

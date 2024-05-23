@@ -39,6 +39,7 @@
 
 #about .section-header p {
     margin-bottom: 0;
+    font-size: 1.5rem;
     
 }
 
@@ -107,7 +108,7 @@
 #about,
 #about * {
     color: rgb(43, 59, 9); 
-    font-size: 20px; 
+    font-size: 2rem; 
 }
 
 #about .col-lg-6 h2 {
