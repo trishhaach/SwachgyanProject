@@ -4,13 +4,20 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-}
-
-.square-wrapper {
+    width: 100vw;
+    max-width: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    gap: 30px;
+    padding: 40px 60px;
+  }
+  
+  .square-wrapper {
     display: flex;
-}
-
-.square-box {
+  }
+  
+  .square-box {
     width: 250px;
     height: 260px;
     border: 2px solid black;
@@ -21,12 +28,6 @@
     background-size: cover;
     background-position: center;
     margin: 0 10px;
-}
-.square-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
   }
   
   .square-box h2 {
@@ -34,68 +35,52 @@
     top: 0;
   }
   
-* {
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: monospace;
-    font-family: rubik;
-    line-height: 1.6;
-    
-}
-
-body {
+  }
+  
+  body {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
     background-color: white;
-    margin: 0; 
-}
-
-.Gcontainer {
-    width: 100vw;
-    max-width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-        background-size: cover;
-    background-position: center;
-    gap: 30px;
-    padding: 40px 60px;
-}
-
-
-h2{
+    margin: 0;
+  }
+  
+  h2 {
     font-size: 3em;
     color: rgba(232, 28, 62, 0.686);
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-    border: black;
-
-}
-
-
-
-.reset {
-    padding: 8px 15px; 
-    font-size: 1em; 
+  }
+  
+  .reset {
+    padding: 8px 15px;
+    font-size: 1em;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     cursor: pointer;
     font-weight: 600;
-    width: auto; 
-}
-
-
-
-.reset:focus{
-    color: White;
+    width: auto;
+    margin-top: 20px; /* Add margin-top to position below the memory game grid */
+  }
+  
+  .reset:focus {
+    color: white;
     background-color: rgba(88, 179, 14, 0.8);
-}
-
-.memoryGame {
+  }
+  
+  .memory-game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .memoryGame {
     width: 440px; /* Adjust as needed */
     height: 440px; /* Adjust as needed */
     display: flex;
@@ -105,52 +90,37 @@ h2{
     perspective: 500px;
     justify-content: center; /* Center the items horizontally */
     align-items: center; /* Center the items vertically */
-}
-
-.item{
+  }
+  
+  .item {
     position: relative;
-    width:100px;
+    width: 100px;
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 3em;
     background: #fff;
-    transition: 0.25s; 
-}
-
-
-.item {
-    width: 100px;
-    height: 100px; 
-    border: 1px solid black;
-    background: white;
-    display: inline-block;
-    margin: 5px;
-    text-align: center;
-    line-height: 50px;
-    cursor: pointer;
-    transition: transform 0.3s ease; /* transition for smooth animation */
-}
-
-.item.flip {
-    transform: rotateY(180deg); 
-}
-
-.hidden {
+    transition: 0.25s;
+  }
+  
+  .item.flip {
+    transform: rotateY(180deg);
+  }
+  
+  .hidden {
     visibility: hidden;
-}
-
-.Gcontainer h2 {
+  }
+  
+  .Gcontainer h2 {
     font-size: 5rem;
-}
-
-.Gcontainer h2 .game-emoji {
+  }
+  
+  .Gcontainer h2 .game-emoji {
     color: white !important;
-}
-
-
-.congratulations {
+  }
+  
+  .congratulations {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -162,31 +132,28 @@ h2{
     font-size: 24px;
     text-align: center;
     z-index: 9999;
-}
-
-.congratulations button {
+  }
+  
+  .congratulations button {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #4caf50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-}
-
-.congratulations button:hover {
+  }
+  
+  .congratulations button:hover {
     background-color: #45a049;
-}
-.square-box.memory-game-box {
-    background-image: url('../../assests/memorygame.png');
+  }
+  
+  .square-box.memory-game-box {
+    background-image: url("../../assests/memorygame.png");
   }
   
   .square-box.bin-sort-box {
-    background-image: url('../../assests/BinSortGame.png'); /* Assuming you have a binsort.png image in the assets folder */
+    background-image: url("../../assests/BinSortGame.png");
   }
-
-
-
-
-
+  

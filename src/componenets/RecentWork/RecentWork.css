@@ -17,18 +17,21 @@
 
 .Rcontainer {
   position: relative;
-  height: auto; 
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  width: 90vw; 
+  height: 60vh; 
 }
 
 .image {
-
   margin: 0 20px; 
-  width: 40vw; /* Set the desired width */
-  height: 50vh;
-  
+  width: 40vw; /* Set fixed width */
+  height: 50vh; /* Set fixed height */
+  object-fit: cover; /* Ensure the image covers the container without stretching */
+  border: 1px solid #ddd; /* Optional: add a border to highlight the image area */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better visuals */
 }
 
 .arrow {
@@ -37,13 +40,15 @@
   transform: translateY(-50%);
   font-size: 24px;
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.7); 
+  padding: 10px; 
+  border-radius: 50%; 
 }
 
 .left-arrow {
-  left: 0;
+  left: 10px;
 }
 
 .right-arrow {
-  right: 0;
+  right: 10px; 
 }
-

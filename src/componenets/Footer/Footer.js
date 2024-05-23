@@ -1,12 +1,11 @@
 import React from 'react';
-import './Footer.css'; // Import the CSS file for styling
+import './Footer.css'; 
 import logo1 from '../../assests/kmcLogo.jpg';
 import logo2 from '../../assests/aviyantaLogo.png';
 import logo3 from '../../assests/techLeadHersLogo.png';
 import socialMedia1 from '../../assests/Instagram.png';
 import socialMedia2 from '../../assests/GmailLogo.png';
-// import socialMedia3 from './path-to-image3.jpg';
-// import socialMedia4 from './path-to-image4.jpg';
+
 
 const Footer = () => {
   return (
@@ -18,14 +17,14 @@ const Footer = () => {
           <img src={logo3} alt="Logo 3" />
         </div>
         <div className="footer-center">
-          <a href="https://swachgyaan.vercel.app" className="footer-website">Swachgyan</a>
+          <a href="https://www.yourwebsite.com" className="footer-website">Contact Us</a>
         </div>
         <div className="footer-social-media">
           <a href="https://www.instagram.com/tech_leadhers/" target="_blank" rel="noopener noreferrer">
-            <img src={socialMedia1} alt="Social Media 1" />
+            <img src={socialMedia1} alt="Instagram" />
           </a>
           <a href="mailto:swachgyaan@gmail.com" target="_blank" rel="noopener noreferrer">
-            <img src={socialMedia2} alt="Social Media 2" />
+            <img src={socialMedia2} alt="Gmail" />
           </a>
           {/* <a href="https://www.socialmedia3.com" target="_blank" rel="noopener noreferrer">
             <img src={socialMedia3} alt="Social Media 3" />

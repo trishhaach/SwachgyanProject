@@ -1,75 +1,72 @@
 import React, { useState, useEffect } from "react";
 import "./Games.css";
 import bk from "../../assests/bk.png";
-import memorygame from "../../assests/memorygame.png";
 import playGame from "../../assests/PlayGame.png";
 import RecyclabilityChecker from "../BinSort/BinSort";
-import binSortCover from "../../assests/BinSortGame.png"; 
+import binSortCover from "../../assests/BinSortGame.png";
 
 const Games = () => {
   const [gameStep, setGameStep] = useState("playGame"); // Track the current step of the game
-  const [emojis, setEmojis] = useState([
-    "🍕",
-    "🍕",
-    "🥦",
-    "🥦",
-    "🍏",
-    "🍏",
-    "🥕",
-    "🥕",
-    "🥫",
-    "🥫",
-    "📦",
-    "📦",
-    "🥤",
-    "🥤",
-    "🚗",
-    "🚗",
-  ]);
   const [shuffledPairs, setShuffledPairs] = useState([]);
   const [flippedIndices, setFlippedIndices] = useState([]);
   const [solvedIndices, setSolvedIndices] = useState([]);
   const [showCongratulations, setShowCongratulations] = useState(false);
 
+  const emojis = [
+    "🍕",
+    "🥦",
+    "🍏",
+    "🥕",
+    "🥫",
+    "📦",
+    "🥤",
+    "🚗",
+    "🍃",
+    "🌱",
+    "📱",
+    "🎮",
+  ];
+
   useEffect(() => {
-    const shuffledEmojis = emojis.sort(() => Math.random() - 0.5);
-    const selectedEmojis = Array.from(new Set(shuffledEmojis.slice(0, 8)));
+    resetGame();
+  }, []);
+
+  const resetGame = () => {
+    const selectedEmojis = emojis.slice(0, 6);
     const pairs = [...selectedEmojis, ...selectedEmojis];
     const shuffledPairs = pairs.sort(() => Math.random() - 0.5);
     setShuffledPairs(shuffledPairs);
-  }, [emojis]);
+    setFlippedIndices([]);
+    setSolvedIndices([]);
+    setShowCongratulations(false);
+  };
 
   const handleClick = (index) => {
-    if (gameStep === "playGame") {
-      setGameStep("squareBox");
-    } else if (gameStep === "squareBox") {
-      setGameStep("memoryGame");
-    } else {
-      if (!solvedIndices.includes(index)) {
-        if (flippedIndices.includes(index)) {
-          setFlippedIndices(flippedIndices.filter((idx) => idx !== index));
-        } else {
-          setFlippedIndices([...flippedIndices, index]);
-          if (flippedIndices.length === 1) {
-            if (shuffledPairs[flippedIndices[0]] === shuffledPairs[index]) {
-              setSolvedIndices([...solvedIndices, flippedIndices[0], index]);
-              setFlippedIndices([]);
-              if (solvedIndices.length + 2 === shuffledPairs.length) {
-                setShowCongratulations(true);
-              }
-            } else {
-              setTimeout(() => {
-                setFlippedIndices([]);
-              }, 1000);
-            }
+    if (gameStep !== "memoryGame") return;
+
+    if (!solvedIndices.includes(index) && !flippedIndices.includes(index)) {
+      const newFlippedIndices = [...flippedIndices, index];
+      setFlippedIndices(newFlippedIndices);
+
+      if (newFlippedIndices.length === 2) {
+        const [firstIndex, secondIndex] = newFlippedIndices;
+        if (shuffledPairs[firstIndex] === shuffledPairs[secondIndex]) {
+          setSolvedIndices([...solvedIndices, firstIndex, secondIndex]);
+          setFlippedIndices([]);
+          if (solvedIndices.length + 2 === shuffledPairs.length) {
+            setShowCongratulations(true);
           }
+        } else {
+          setTimeout(() => {
+            setFlippedIndices([]);
+          }, 1000);
         }
       }
     }
   };
 
   const renderBoxes = () => {
-    return shuffledPairs.slice(0, 12).map((emoji, index) => {
+    return shuffledPairs.map((emoji, index) => {
       const isFlipped = flippedIndices.includes(index);
       const isSolved = solvedIndices.includes(index);
 
@@ -83,29 +80,6 @@ const Games = () => {
         </div>
       );
     });
-  };
-
-  const resetGame = () => {
-    setFlippedIndices([]);
-    setSolvedIndices([]);
-    setEmojis([
-      "🍕",
-      "🍕",
-      "🥦",
-      "🥦",
-      "🍃",
-      "🍃",
-      "🌱",
-      "🌱",
-      "🥫",
-      "🥫",
-      "📦",
-      "📦",
-      "🥤",
-      "🥤",
-      "📱",
-      "📱",
-    ]);
   };
 
   return (
@@ -125,19 +99,18 @@ const Games = () => {
       )}
       {gameStep === "squareBox" && (
         <div className="square-wrapper">
-        <div
-          className="square-box memory-game-box"
-          onClick={() => setGameStep("memoryGame")}
-        ></div>
-      
-        <div
-          className="square-box bin-sort-box"
-          onClick={() => setGameStep("binSort")}
-        ></div>
+          <div
+            className="square-box memory-game-box"
+            onClick={() => setGameStep("memoryGame")}
+          ></div>
+          <div
+            className="square-box bin-sort-box"
+            onClick={() => setGameStep("binSort")}
+          ></div>
         </div>
       )}
       {gameStep === "memoryGame" && (
-        <div className="container">
+        <div className="memory-game-container">
           <div className="memoryGame">{renderBoxes()}</div>
           <button className="reset" onClick={resetGame}>
             Reset Game
@@ -159,7 +132,4 @@ const Games = () => {
   );
 };
 
-
-
 export default Games;
-
