@@ -18,7 +18,7 @@ const Footer = () => {
           <img src={logo3} alt="Logo 3" />
         </div>
         <div className="footer-center">
-          <a href="https://www.yourwebsite.com" className="footer-website">Swachgyan</a>
+          <a href="https://swachgyaan.vercel.app" className="footer-website">Swachgyan</a>
         </div>
         <div className="footer-social-media">
           <a href="https://www.instagram.com/tech_leadhers/" target="_blank" rel="noopener noreferrer">
