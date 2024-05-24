@@ -30,11 +30,11 @@
   }
   
   .contact .contact-image {
-    max-width: 82%;
+    max-width: 79%;
     height: auto;
     border-radius: 8px; /* Optional: add some border-radius for styling */
     margin-bottom: 20px;
-    margin-right: -330px /* Optional: add some space below the image */
+    margin-right: -290px /* Optional: add some space below the image */
   }
 
   .php-email-form input,

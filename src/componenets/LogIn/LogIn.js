@@ -45,7 +45,7 @@ function LoginForm() {
 
     return (
         <div className="login login-form">
-        <form onSubmit={handleSubmit} className="container">
+        <form onSubmit={handleSubmit} className="lcontainer">
             <div className="form-container">
                 <label htmlFor="username">Username:</label>
                 <input type="text" id="username" value={formData.username} onChange={handleChange} required /><br />
@@ -54,6 +54,7 @@ function LoginForm() {
                 <input type="password" id="password" value={formData.password} onChange={handleChange} required /><br />
                 
                 <button type="submit">Log In</button>
+                <button class="btn submits frgt-pass">Forgot Password</button>
             </div>
         </form>
         </div>
